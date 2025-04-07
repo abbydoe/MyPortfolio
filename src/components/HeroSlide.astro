@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Headshot from "../assets/Headshot.png";
+import arrow from "../assets/white-arrow.svg";
 ---
 
 <div class="swiper-slide hero-slide">
@@ -17,9 +18,9 @@ import Headshot from "../assets/Headshot.png";
       <div class="text">
         <h1>Abby Harris</h1>
         <div class="grouped">
-          <h2 class="first">| Product Designer</h2>
-          <h2 class="second">| Front-end Developer</h2>
-          <h2 class="third">| Content Creator</h2>
+          <h2 class="first">Product Designer</h2>
+          <h2 class="second">Front-end Developer</h2>
+          <h2 class="third">Content Creator</h2>
         </div>
         <p class="h-description">
           I have experience designing for responsive web, native mobile apps,
@@ -27,9 +28,7 @@ import Headshot from "../assets/Headshot.png";
           basically a 2-1 solution!
         </p>
         <button id="caseButton">Recent Work</button>
-        <svg class="arrow-down" width="30" height="30" viewBox="0 0 24 24">
-          <path fill="white" d="M12 16L6 10h12z"></path>
-        </svg>
+        <img src={arrow.src} alt="navigation arrow down" class="arrow" />
       </div>
     </div>
   </section>
@@ -54,7 +53,7 @@ import Headshot from "../assets/Headshot.png";
     display: flex;
 
     padding-bottom: 0px;
-    margin-top: 24px !important;
+    margin-top: 0px !important;
     margin-bottom: 8px !important;
   }
 
@@ -69,16 +68,19 @@ import Headshot from "../assets/Headshot.png";
   .third {
     display: flex;
     margin-top: 0px !important;
+    margin-bottom: 0px;
   }
 
-  .arrow-down {
+  .arrow {
     display: none;
   }
 
   /* Mobile layout */
   @media (max-width: 768px) {
-    .arrow-down {
+    .arrow {
       display: block;
+      width: 24px; /* or whatever size fits */
+      height: auto;
     }
 
     .content {
@@ -107,13 +109,14 @@ import Headshot from "../assets/Headshot.png";
 
     h1 {
       font-size: 40px;
-      padding: 0;
+      padding-bottom: 24px;
     }
 
     .grouped {
       margin: 0;
       font-size: 20px;
-      border: none;
+      border-left: 1px solid rgb(199, 199, 199);
+      padding-left: 8px;
     }
 
     .text {
