@@ -1,11 +1,154 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import HeroSlide from "../components/HeroSlide.astro";
+import CaseStudySlide from "../components/CaseStudySlide.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const caseStudies = [
+  {
+    title: "Font Theme",
+    subtitle: "Figma Plugin",
+    video: "/assets/PluginDemo.mov",
+    tags: [
+      { label: "UI Design", class: "first" },
+      { label: "Front-end Development", class: "second" },
+    ],
+    description:
+      "Search for font pairs that match the theme of your design. Save fonts and their weights as text styles with the click of a button.",
+    link: "/plugin",
+  },
+  {
+    title: "Marcy K Salon",
+    subtitle: "Salon Service and Booking Site",
+    image: "/assets/Marcy.png",
+    tags: [
+      { label: "UX Research", class: "first" },
+      { label: "Responsive UI Design", class: "second" },
+    ],
+    description:
+      "Integrated Calendly to reduce nonpaying customers and create a seamless booking and online payment experience. Conducted user interviews and competitive analyses.",
+    link: "/salon",
+  },
+  {
+    title: "Ice Time",
+    subtitle: "Native Mobile App",
+    image: "/assets/IceTime.png",
+    tags: [{ label: "UI Design", class: "first" }],
+    description:
+      "Locate rinks with freestyle sessions when traveling. Sign waivers, pay, and reserve ice time.",
+    link: "/ice",
+  },
+];
 ---
 
 <Layout>
-	<Welcome />
+  <Header />
+
+  <section class="casestudies">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <HeroSlide />
+        {caseStudies.map((item) => <CaseStudySlide {...item} />)}
+      </div>
+      <button
+        class="mobile-slide-arrow"
+        id="mobileSlideArrow"
+        aria-label="Next slide"
+      >
+        <svg class="arrow-down" width="30" height="30" viewBox="0 0 24 24">
+          <path fill="white" d="M12 16L6 10h12z"></path>
+        </svg>
+      </button>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
 </Layout>
+
+<style></style>
+
+<script>
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+  script.onload = () => {
+    if (document.querySelector(".swiper")) {
+      const swiper = new Swiper(".swiper", {
+        direction: "vertical",
+        loop: false,
+        spaceBetween: 30,
+        speed: 1000,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+        on: {
+          slideChange() {
+            const pagination = document.querySelector(".swiper-pagination");
+            const mobileArrow = document.getElementById("mobileSlideArrow");
+
+            // ✅ Hide pagination + arrow on first slide
+            if (swiper.activeIndex === 0) {
+              if (pagination) pagination.style.display = "none";
+              if (mobileArrow) mobileArrow.style.display = "none";
+            } else {
+              if (pagination) pagination.style.display = "block";
+              if (mobileArrow) mobileArrow.style.display = "flex"; // or "block"
+            }
+          },
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+
+      // ✅ THIS is what you were missing
+      const arrowBtn = document.getElementById("mobileSlideArrow");
+      if (arrowBtn) {
+        arrowBtn.addEventListener("click", () => {
+          swiper.slideNext();
+        });
+      }
+
+      if (swiper.activeIndex === 0) {
+        document.querySelector(".swiper-pagination").style.display = "none";
+        document.getElementById("mobileSlideArrow").style.display = "none";
+      }
+
+      window.addEventListener("scroll-to-section", () => {
+        swiper.slideTo(1);
+      });
+
+      const video = document.querySelector(".auto-play-video");
+      if (video) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              entry.isIntersecting ? video.play() : video.pause();
+            });
+          },
+          { threshold: 0.5 },
+        );
+        observer.observe(video);
+      }
+
+      function scrollToSection() {
+        swiper.slideTo(1);
+      }
+
+      document
+        .getElementById("resumeLink")
+        ?.addEventListener("click", function (e) {
+          e.preventDefault();
+          const resumeUrl = "/assets/resume.pdf";
+          window.open(resumeUrl, "_blank");
+
+          const downloadLink = document.createElement("a");
+          downloadLink.href = resumeUrl;
+          downloadLink.download = "AbbyHarris_resume.pdf";
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+        });
+    }
+  };
+  document.body.appendChild(script);
+</script>
