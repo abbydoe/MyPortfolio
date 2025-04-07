@@ -1,0 +1,215 @@
+<header class="site-header">
+  <div class="logo">AH</div>
+
+  <!-- Hamburger (visible on mobile only) -->
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navigation links -->
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/work">Work</a>
+    <a
+      href="/resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      id="resumeLink"
+    >
+      Resume
+      <img
+        src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
+        alt=""
+      />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/harris-abigail/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      LinkedIn
+      <img
+        src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
+        alt=""
+      />
+    </a>
+  </nav>
+
+  <nav class="mobile-nav-overlay" id="mobileNav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/">About</a></li>
+      <li><a href="/work">Work</a></li>
+      <li><a href="https://github.com" target="_blank">GitHub ↗</a></li>
+      <li>
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="resumeLink"
+        >
+          Resume
+          <img
+            src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
+            alt=""
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/harris-abigail/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+          <img
+            src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
+            alt=""
+          />
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+  }
+
+  .logo {
+    font-size: 1.75rem;
+    font-weight: bold;
+    z-index: 1000;
+  }
+
+  /* Nav Links (visible by default on desktop) */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .nav-links a img {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Hamburger Menu (hidden on desktop) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+  }
+
+  .mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+
+  .mobile-nav-overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .mobile-nav-overlay li {
+    margin: 1.2rem 0;
+  }
+
+  .mobile-nav-overlay a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  /* Toggle class for visibility */
+  .mobile-nav-overlay.active {
+    display: flex;
+  }
+
+  /* === Mobile Styles === */
+  @media (max-width: 768px) {
+    button {
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo {
+      padding: 0;
+      margin-right: 24px;
+    }
+
+    .hamburger {
+      display: flex;
+      margin-left: 24px;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: black;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.5rem 0;
+      display: none;
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+
+    .site-header {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+</style>
+
+<script>
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const mobileNav = document.getElementById("mobileNav");
+
+  hamburgerBtn?.addEventListener("click", () => {
+    mobileNav.classList.toggle("active");
+  });
+</script>

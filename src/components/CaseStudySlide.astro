@@ -1,0 +1,97 @@
+---
+const {
+  title,
+  subtitle,
+  image,
+  video,
+  tags = [],
+  description,
+  link,
+} = Astro.props;
+---
+
+<div class="swiper-slide">
+  <div class="content case-study">
+    {
+      video ? (
+        <video muted playsinline loop preload="auto" class="auto-play-video">
+          <source src={video} />
+        </video>
+      ) : (
+        <img class="image" src={image} alt={title} />
+      )
+    }
+    <div class="text">
+      <h1>{title}</h1>
+      <h3>{subtitle}</h3>
+      <div class="grouped">
+        {tags.map((tag) => <h2 class={tag.class}>| {tag.label}</h2>)}
+      </div>
+      <p>{description}</p>
+      <a href={link}>
+        <button>Case Study</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .content {
+      height: 100%;
+      width: 100%;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      text-align: center;
+      margin: 0;
+      //background-color: #00202a;
+      border-radius: 8px;
+    }
+
+    .case-study img,
+    .case-study video {
+      width: 100%;
+      height: auto;
+      padding-right: 0;
+      margin-top: 3rem;
+    }
+
+    .text {
+      padding-left: 0 1rem;
+      max-width: 90%;
+      margin-top: 1rem;
+    }
+
+    .text h1 {
+      font-size: 26px;
+      padding: 4px;
+    }
+
+    .text h3 {
+      font-size: 20px;
+      padding: 4px;
+    }
+
+    .text .grouped {
+      margin-left: 0;
+    }
+
+    .content p {
+      padding-left: 0;
+    }
+
+    button {
+      background-color: transparent;
+      color: white;
+      border: white 1px solid;
+      border-radius: 8px;
+      cursor: pointer;
+      max-width: 50%;
+      padding: 8px 32px 8px 32px;
+      font-size: 16px;
+      margin-left: 0;
+    }
+  }
+</style>

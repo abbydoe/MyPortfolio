@@ -1,0 +1,123 @@
+---
+import { Image } from "astro:assets";
+import Headshot from "../assets/Headshot.png";
+---
+
+<div class="swiper-slide hero-slide">
+  <section class="hero">
+    <div class="content">
+      <Image
+        src={Headshot}
+        alt="Headshot"
+        width={Headshot.width}
+        height={Headshot.height}
+        format="webp"
+        class="hero-image"
+      />
+      <div class="text">
+        <h1>Abby Harris</h1>
+        <div class="grouped">
+          <h2 class="first">| Product Designer</h2>
+          <h2 class="second">| Front-end Developer</h2>
+          <h2 class="third">| Content Creator</h2>
+        </div>
+        <p class="h-description">
+          I have experience designing for responsive web, native mobile apps,
+          and Figma plugins. I can code in HTML,CSS, and JavaScript too, so I’m
+          basically a 2-1 solution!
+        </p>
+        <button id="caseButton">Recent Work</button>
+        <svg class="arrow-down" width="30" height="30" viewBox="0 0 24 24">
+          <path fill="white" d="M12 16L6 10h12z"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.getElementById("caseButton")?.addEventListener("click", () => {
+    console.log("Button clicked");
+    const event = new CustomEvent("scroll-to-section", {
+      bubbles: true,
+    });
+    dispatchEvent(event);
+  });
+</script>
+
+<style>
+  .h-description {
+    display: block;
+  }
+
+  .first {
+    display: flex;
+
+    padding-bottom: 0px;
+    margin-top: 24px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .second {
+    display: flex;
+
+    padding-bottom: 0px;
+    margin-top: 0px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .third {
+    display: flex;
+    margin-top: 0px !important;
+  }
+
+  /* Mobile layout */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .h-description {
+      display: none;
+    }
+
+    .hero-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 2rem;
+    }
+
+    .text {
+      max-width: 100%;
+    }
+
+    h1 {
+      font-size: 40px;
+      padding: 0;
+    }
+
+    .grouped {
+      margin: 0;
+      font-size: 20px;
+      border: none;
+    }
+
+    .text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* ✅ center everything horizontally */
+    }
+
+    .text button {
+      margin: 60px 0 0 0;
+      border: none;
+      font-size: 20px;
+    }
+  }
+</style>
