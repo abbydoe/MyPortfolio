@@ -1,0 +1,154 @@
+---
+import HoverCard from "../components/HoverCard.astro";
+import StaticCard from "../components/StaticCard.astro";
+import { Image } from "astro:assets";
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import PluginImage from "../assets/W-Plugin.svg";
+import MarcyImage from "../assets/W-Marcy.svg";
+import IceImage from "../assets/W-Ice.svg";
+import Polka from "../assets/W-Polka.svg";
+import LogoImage from "../assets/N-Logo.svg";
+import WPImage from "../assets/W-P.svg";
+import WAImage from "../assets/W-A.svg";
+import WFat from "../assets/W-Fat.svg";
+import WWedding from "../assets/W-Wedding.svg";
+import WQue from "../assets/W-Que.svg";
+import WAlc from "../assets/N-ALC.svg";
+import WOverflow from "../assets/N-Overflow.svg";
+import WTiktok from "../assets/N-TikTok.svg";
+
+const designProjects = [
+  {
+    image: PluginImage,
+    title: "Font Theme",
+    role: "Figma Plugin",
+    description:
+      "Search for fonts that match the theme of your design. Save fonts and their weights as text styles.",
+    link: "/plugin",
+  },
+  {
+    image: MarcyImage,
+    title: "Marcy K Salon",
+    role: "UX Design",
+    description: "Salon booking and service site with Calendly integration.",
+    link: "/salon",
+  },
+  {
+    image: IceImage,
+    title: "Ice Time",
+    role: "UI Design",
+    description: "Mobile app for scheduling ice skating sessions.",
+    link: "/ice",
+  },
+];
+
+const logoMods = [Polka, LogoImage, WAImage, WPImage];
+
+const photography = [
+  {
+    image: WFat,
+    title: "Church in a Day Project",
+    role: "Photography",
+    description: "Captured candid wedding shots and styled portraits.",
+    link: "https://photos.app.goo.gl/2jmWXgjqsMC1Jyr99",
+  },
+  {
+    image: WWedding,
+    title: "Wedding",
+    role: "Photography",
+    description: "Event documentation of couples and families.",
+    link: "https://photos.app.goo.gl/PbrQzp2fdih8cYro9",
+  },
+  {
+    image: WQue,
+    title: "Quebec Youth Trip",
+    role: "Photography",
+    description: "Celebration photography filled with tradition and joy.",
+    link: "https://photos.app.goo.gl/DGxEGdLq7UjPwVHbA",
+  },
+];
+
+const contentCreation = [
+  {
+    image: WAlc,
+    title: "AIC Arlington",
+    role: "Content Creation",
+    description: "Concert clips edited and formatted for Instagram Reels.",
+    link: "https://tiktok.com/@aic-arlington",
+  },
+  {
+    image: WOverflow,
+    title: "Overflow Youth",
+    role: "Content Creation",
+    description: "Youth reels edited for reach and engagement.",
+    link: "https://tiktok.com/@overflowyouth",
+  },
+  {
+    image: WTiktok,
+    title: "Capcut Edits",
+    role: "Content Creation",
+    description: "Short-form TikTok edits using Capcut templates.",
+    link: "https://www.tiktok.com/@abby.on.ice?is_from_webapp=1&sender_device=pc",
+  },
+];
+---
+
+<Layout>
+  <Header />
+  <section class="work">
+    <h1>Design and Development</h1>
+    <div class="card-grid">
+      {designProjects.map((project) => <HoverCard {...project} />)}
+    </div>
+
+    <h1>Photography</h1>
+    <div class="card-grid">
+      {photography.map((photo) => <HoverCard {...photo} />)}
+    </div>
+
+    <h1>Logo and Picture Modification</h1>
+    <div class="card-grid">
+      {logoMods.map((img) => <StaticCard image={img} />)}
+    </div>
+
+    <h1>Content Creation</h1>
+    <div class="card-grid">
+      {contentCreation.map((content) => <HoverCard {...content} />)}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .work {
+    margin: 16px;
+    padding-bottom: 16px;
+  }
+
+  .work h1 {
+    font-size: 36px;
+    padding: 0;
+    margin: 12px 0 12px 0;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .logo-mod-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Exactly 2 per row */
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+    max-width: 100%;
+  }
+
+  h2 {
+    margin-top: 3rem;
+    font-size: 1.8rem;
+  }
+</style>

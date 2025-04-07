@@ -1,0 +1,353 @@
+---
+import Header from "../components/Header.astro";
+import SplitSection from "../components/SplitSection.astro";
+import Layout from "../layouts/Layout.astro";
+import HeroImg from "../assets/Hero-Img.svg";
+import BadPlugins from "../assets/Bad-Plugins.svg";
+import ThreeFonts from "../assets/3fonts.svg";
+import PopLayout from "../assets/Pop-Layout.svg";
+import themeCards from "../assets/Theme-Cards.svg";
+import commonLayout from "../assets/Common-Layout.svg";
+import FinalImage from "../assets/Final-Image.svg";
+import BlueWave from "../assets/Blue-wave.svg";
+import { Image } from "astro:assets";
+---
+
+<Layout>
+  <Header />
+
+  <SplitSection>
+    <div slot="text">
+      <h1>
+        Font Theme is an AI-powered Figma plugin that pairs fonts based on a
+        design theme and saves them as text-styles in your Figma file.
+      </h1>
+      <div class="nested-container1">
+        <div class="icon-column">
+          <img src="assets/people.svg" alt="peopleicon" />
+        </div>
+        <div class="body-column">
+          <p>
+            The design was done in one day, but the implementation took 2
+            months. Testing is ongoing.
+          </p>
+        </div>
+      </div>
+      <div class="nested-container2">
+        <div class="icon-column">
+          <img src="assets/Timer.svg" alt="peopleicon" />
+        </div>
+        <div class="body-column">
+          <p>
+            Me, the UI Designer and mostly front-end developer. Puskar Dev, a
+            skilled back-end developer who taught me JavaScript.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div slot="image">
+      <Image
+        src={HeroImg}
+        alt="Landing screen for font theme plugin. Search for a theme."
+        width={HeroImg.width}
+        height={HeroImg.height}
+        class="image"
+      />
+    </div>
+  </SplitSection>
+
+  <SplitSection>
+    <div slot="text">
+      <h1>What prompted this project?</h1>
+      <div class="nested-container1">
+        <div class="body-column">
+          <h2>A personal problem</h2>
+          <p>
+            I needed help choosing a font pair for my current project, Synergy.
+            I found several plugins that matched fonts, but none that described
+            the vibe the fonts would go well with.
+          </p>
+        </div>
+      </div>
+      <div class="nested-container2">
+        <div class="body-column">
+          <h2>The idea</h2>
+          <p>
+            I decided to create a plugin for my own use. Then I realized a lot
+            of newer designers may not be familiar with typography, so this can
+            help familiarize them with it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div slot="image">
+      <Image
+        src={BadPlugins}
+        alt="font pair, better font picker, accidentally great font pairings"
+        width={BadPlugins.width}
+        height={BadPlugins.height}
+        class="image"
+      />
+    </div>
+  </SplitSection>
+
+  <SplitSection>
+    <div slot="text">
+      <h1>I did not follow a traditional UX process for this plugin...</h1>
+      <div class="nested-container1">
+        <div class="body-column">
+          <h2>Ummmm why not?</h2>
+          <p>
+            Since the plugin relies on an AI API call to display font pair
+            results and interacts with Figma’s API to create text styles, it
+            wasn’t feasible to create a prototype that mimicked this behavior
+            for testing.
+          </p>
+        </div>
+      </div>
+      <div class="nested-container2">
+        <div class="body-column">
+          <h2>Sooo what did I do then?</h2>
+          <p>
+            Since the plugin relies on an AI API call to display font pair
+            results and interacts with Figma’s API to create text styles, it
+            wasn’t feasible to create a prototype that mimicked this behavior
+            for testing.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div slot="image">
+      <Image
+        src={HeroImg}
+        alt="Landing screen for font theme plugin. Search for a theme."
+        width={HeroImg.width}
+        height={HeroImg.height}
+        class="image"
+      />
+    </div>
+  </SplitSection>
+
+  <Image
+    src={BlueWave}
+    alt="an image of the design process I followed"
+    width={BlueWave.width}
+    height={BlueWave.height}
+    class="wave"
+  />
+
+  <SplitSection>
+    <div slot="text">
+      <h1>Making Design Decisions</h1>
+      <div class="body-column">
+        <h2>1,2, or 3 fonts?</h2>
+        <p>
+          I played around with the idea of letting designers choose how many
+          fonts to pair.
+        </p>
+      </div>
+      <div class="body-column">
+        <h2>My rationale</h2>
+        <p>
+          Designs that require 3 fonts are usually large and complicated. The
+          type of designs that juniors work on are more simple and don’t require
+          so many fonts. <br />
+          Only 1 font defeated the idea of helping new designers recognize fonts
+          that pair well with a theme.
+        </p>
+      </div>
+      <div class="body-column">
+        <h2>So I decided on 2 because...</h2>
+        <p>
+          It offers enough flexibility for simple-medium complex designs and
+          doesn’t overwhelm newer designers.
+        </p>
+      </div>
+    </div>
+
+    <div slot="image">
+      <Image
+        src={ThreeFonts}
+        alt="font pair, better font picker, accidentally great font pairings"
+        width={ThreeFonts.width}
+        height={ThreeFonts.height}
+        class="image"
+      />
+    </div>
+  </SplitSection>
+
+  <SplitSection reverse={true}>
+    <div slot="text">
+      <h1>Organizing Information</h1>
+      <div class="body-column">
+        <h2>I could follow a popular layout route...</h2>
+        <p>
+          I noticed other font plugins displaying information similar to this
+          wireframe and I thought this would be the easiest path to follow.
+        </p>
+      </div>
+      <div class="body-column">
+        <h2>But this created information overload</h2>
+        <p>
+          4 pairs of fonts in 5 themes would be an endless scroll laid out like
+          this.
+        </p>
+      </div>
+      <div class="body-column">
+        <h2>So I decided on 2 because...</h2>
+        <p>
+          It offers enough flexibility for simple-medium complex designs and
+          doesn’t overwhelm newer designers.
+        </p>
+      </div>
+    </div>
+
+    <div slot="image">
+      <Image
+        src={PopLayout}
+        alt="popular layout for font weight information"
+        width={PopLayout.width}
+        height={PopLayout.height}
+        class="image"
+      />
+    </div>
+  </SplitSection>
+
+  <div class="text-row-center">
+    <h1>So I opted for simplicity and consistency</h1>
+  </div>
+  <div class="column-container-double">
+    <div class="body-column double">
+      <p>
+        Instead of showing all the font weights outright, I gave the user cards
+        with a snippet of what the fonts look like together.
+      </p>
+
+      <div class="square-image-container">
+        <Image
+          src={themeCards}
+          alt="popular layout for font weight information"
+          class="square-image"
+        />
+      </div>
+    </div>
+    <div class="body-column-double">
+      <p>
+        When they click on a card, it displays the information in the same
+        pattern as they’ve already seen in the results tab.
+      </p>
+      <div class="square-image-container">
+        <Image
+          src={commonLayout}
+          alt="popular layout for font weight information"
+          class="square-image"
+        />
+      </div>
+    </div>
+  </div>
+
+  <SplitSection fullHeight={false}>
+    <div slot="text">
+      <h1 class="H1">
+        Figma Plugins don't allow separate files for HTML, CSS, and JS
+      </h1>
+      <div class="nested-container1">
+        <div class="body-column">
+          <h2>Cue CMD F</h2>
+          <p>
+            This resulted in 2,241 lines of code in a single file which was a
+            pain to manage! CMD F became my new best friend.
+          </p>
+        </div>
+      </div>
+      <h1 class="H1">Collaboration was key!</h1>
+      <div class="nested-container1">
+        <div class="body-column">
+          <h2>This is where Puskar comes in</h2>
+          <p>
+            While I’ve used HTML and CSS before, this was my first time using
+            JavaScript. Even using ChatGPT, I didn’t know where to place things
+            without breaking something. Puskar taught me the basics and how to
+            debug. Now coding anything else feels 10x easier tham the plugin.
+          </p>
+        </div>
+      </div>
+      <h1 class="H1">I'm using the skills I learned to code this portfolio!</h1>
+      <div class="nested-container1">
+        <div class="body-column">
+          <ul>
+            <li>Creating a JSON file</li>
+            <li>Looping through a JSON using "For each"</li>
+            <li>Dynamic Loading</li>
+            <li>If-then logic</li>
+            <li>API calls</li>
+            <li>Styling multiple CSS classes simultaneously</li>
+            <li>When to use classes vs ids</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div slot="image">
+      <video muted playsinline loop preload="auto" class="auto-play-video-plug">
+        <source src="/assets/code-vid.mov" />
+      </video>
+    </div>
+  </SplitSection>
+
+  <SplitSection>
+    <div slot="text">
+      <h1>Try it for yourself!</h1>
+      <div class="body-column">
+        <h2>This will open in Figma</h2>
+        <p>
+          I’m gathering feedback as people use it, so let me know if you run
+          into any usability problems, or if you have suggestions!
+        </p>
+        <button
+          onclick="location.href='https://www.figma.com/community/plugin/1462625619330633522/font-theme'"
+        >
+          Open in Figma
+        </button>
+      </div>
+    </div>
+
+    <div slot="image">
+      <video muted playsinline loop preload="auto" class="auto-play-video-plug">
+        <source src="/assets/PluginDemo.mov" />
+      </video>
+    </div>
+  </SplitSection>
+</Layout>
+
+<style>
+  .auto-play-video-plug {
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+<script>
+  const videos = document.querySelectorAll(".auto-play-video-plug");
+
+  if (videos.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    videos.forEach((video) => observer.observe(video));
+  }
+</script>
