@@ -151,4 +151,20 @@ const contentCreation = [
     margin-top: 3rem;
     font-size: 1.8rem;
   }
+
+  @media (max-width: 768px) {
+    .card-grid,
+    .logo-mod-grid {
+      grid-template-columns: 1fr; /* Stack one card per row */
+    }
+
+    .work h1 {
+      font-size: 24px;
+      margin-top: 1rem;
+    }
+
+    .work {
+      margin: 1rem;
+    }
+  }
 </style>
