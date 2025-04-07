@@ -1,3 +1,7 @@
+---
+const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing slash
+---
+
 <header class="site-header">
   <div class="logo">AH</div>
 
@@ -9,10 +13,11 @@
   </button>
 
   <!-- Navigation links -->
-  <nav class="nav-links">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/work">Work</a>
+
+  <nav class="nav-links active">
+    <a href="/" class={currentPath === "" ? "active" : ""}>Home</a>
+    <a href="/about" class={currentPath === "/about" ? "active" : ""}>About</a>
+    <a href="/work" class={currentPath === "/work" ? "active" : ""}>Work</a>
     <a
       href="/resume.pdf"
       target="_blank"
@@ -48,7 +53,8 @@
           >GitHub <img
             src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
             alt=""
-          /></a>
+          /></a
+        >
       </li>
       <li>
         <a
@@ -113,6 +119,11 @@
     display: flex;
     align-items: center;
     gap: 0.3rem;
+    padding-right: 0px;
+  }
+  .nav-links a.active {
+    border-bottom: 1px solid white;
+    padding-right: 0px;
   }
 
   .nav-links a img {
@@ -157,6 +168,7 @@
 
   .mobile-nav-overlay li {
     margin: 1.2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .mobile-nav-overlay a {

@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
   color: #fff;
@@ -28,6 +28,13 @@ header {
   color: white; /* Ensure text is readable on dark background */
 }
 h2 {
+  font-family: "verdana", sans-serif;
+  font-weight: 400;
+  color: rgb(199, 199, 199);
+  font-size: 18px;
+}
+
+a {
   font-family: "verdana", sans-serif;
   font-weight: 400;
   color: rgb(199, 199, 199);
@@ -109,7 +116,6 @@ ol li {
   color: white;
 }
 p {
-  font-size: 18px;
   max-width: 700px;
   line-height: 29.124px;
   font-family: "verdana", sans-serif;
@@ -271,6 +277,12 @@ h3 {
 ul {
   gap: 16px;
   list-style-type: none;
+}
+ul li {
+  font-family: "verdana", sans-serif;
+  font-weight: 400;
+  color: rgb(199, 199, 199);
+  font-size: 18px;
 }
 .active {
   color: white;
