@@ -233,4 +233,17 @@ import Header from "../components/Header.astro";
     width: 44px;
     height: 44px;
   }
+  iframe {
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .image {
+      width: 100%;
+      height: auto;
+    }
+
+    iframe {
+      display: none;
+    }
+  }
 </style>
