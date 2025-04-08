@@ -16,8 +16,7 @@ const techStack = {
       image: "assets/PS.png",
       text: {
         bold: "Photoshop",
-        regular:
-          " for image editing, design, and visual manipulation",
+        regular: " for image editing, design, and visual manipulation",
       },
     },
     {
@@ -109,55 +108,118 @@ const techStack = {
 <Layout>
   <body class="aboutColumns">
     <Header />
-    <div class="aboutContainer">
-      <div class="menu">
+    <div class="About-me">
+      <div class="About-me">
         <h1>About Me</h1>
-        <ul class="menuList">
-          <li>
-            <h2 class="active">Tools I Use</h2>
-          </li>
-          <li>
-            <h2>Hobbies</h2>
-          </li>
-          <li>
-            <h2>My Bucket List</h2>
-          </li>
-        </ul>
+        <p>
+          I enjoy designing things I’m passionate about, like figure skating or
+          making learning design accessible to those entering the field. I’ll
+          code if I need to, but I prefer to focus on the design side of things.
+          Learning to code, however, has made me a better designer. I learned
+          how to use Astro during the process of coding this portfolio and I
+          love it because the component structure is so similar to Figma.
+        </p>
+        <p>
+          Aside from design, you'll find me at the ice rink, training
+          calisthenics, making TikTok videos, or knitting something for my Shih
+          Tzu, Princess. I started figure skating as an adult 4 years ago and
+          enjoy making progress videos of my skatingl Calisthenics helps improve
+          my strength, balance, and flexibility to improve my skating
+          performance.
+        </p>
       </div>
-      <div class="toolContent">
-        <div class="columns">
-          <div id="left"><TechList items={techStack.leftColumn} /></div>
-          <div id="right"><TechList items={techStack.rightColumn} /></div>
-        </div>
+      <h1>Tools I Use</h1>
+      <div class="columns">
+        <div id="left"><TechList items={techStack.leftColumn} /></div>
+        <div id="right"><TechList items={techStack.rightColumn} /></div>
       </div>
     </div>
   </body>
 </Layout>
 
 <style>
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 24px;
+    margin-top: 36px;
+  }
+  .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space between;
+    width: 100%;
+    gap: 8rem;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 100:px;
+    max-width: 1200px;
+  }
+
+  .left,
+  .right {
+    flex: 1;
+    width: 100%;
+    max-width: 700px; /* optional */
+  }
+  .About-me {
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: center;
+  }
+  .About-me p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 1200px; /* optional */
+  }
   @media (max-width: 768px) {
-    .aboutContainer {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-      padding: 1rem; /* optional, for breathing room */
-      height: auto; /* let it grow naturally on mobile */
-    }
     .columns {
       flex-direction: column;
       align-items: center;
       padding: 0;
       gap: 0;
     }
+    .About-me p{
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 320px; 
+      padding: 0px;/* optional */
+      margin-top: 0px;
+    }
+    .About-me {
+      padding: 16px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      max-width: 320px;
+      align-items: center;
+      justify-content: center;
+    }
 
     .toolContent {
       height: auto; /* allow natural height */
       padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .toolcontent p{
+      font-size: 14px;
+      line-height: 1.5;
+
+      max-width: 350px; /* optional */
     }
 
-    .left,
-    .right {
+    #left,
+    #right {
       padding-top: 0;
       padding-left: 0;
       padding-right: 0;
@@ -167,6 +229,10 @@ const techStack = {
 
     h1 {
       font-size: 26px;
+      text-align: left;
+      padding: 0%;
+      margin-bottom: 16px;
+      margin-top: 0px;
     }
 
     h2 {
