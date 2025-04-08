@@ -3,6 +3,15 @@ const { items = [] } = Astro.props;
 ---
 
 <style>
+  .responsive-tech-item {
+    min-height: 65px;
+    margin-bottom: 16px;
+
+    p {
+      margin: 0;
+    }
+  }
+
   @media (max-width: 768px) {
     .responsive-tech-item {
       display: flex;
@@ -28,7 +37,7 @@ const { items = [] } = Astro.props;
   items.map((item) => (
     <div
       class="responsive-tech-item"
-      style="display: flex; align-items: center; margin-bottom: 10px;"
+      style="display: flex; align-items: center; margin-bottom: 16px;"
     >
       <img
         src={item.image}
