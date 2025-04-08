@@ -48,9 +48,6 @@ const techStack = {
         regular: " to schedule user interviews and usability tests",
       },
     },
-    // You can add more items like this if needed
-  ],
-  rightColumn: [
     {
       image: "assets/Github.png",
       text: {
@@ -58,6 +55,9 @@ const techStack = {
         regular: " for storing coding projects.",
       },
     },
+    // You can add more items like this if needed
+  ],
+  rightColumn: [
     {
       image: "assets/Vercel.png",
       text: {
@@ -108,32 +108,30 @@ const techStack = {
 <Layout>
   <body class="aboutColumns">
     <Header />
-    <div class="About-me">
-      <div class="About-me">
-        <h1>About Me</h1>
-        <p>
-          I enjoy designing things I’m passionate about, like figure skating or
-          making learning design accessible to those entering the field. I’ll
-          code if I need to, but I prefer to focus on the design side of things.
-          Learning to code, however, has made me a better designer. I learned
-          how to use Astro during the process of coding this portfolio and I
-          love it because the component structure is so similar to Figma.
-        </p>
-        <p>
-          Aside from design, you'll find me at the ice rink, training
-          calisthenics, making TikTok videos, or knitting something for my Shih
-          Tzu, Princess. I started figure skating as an adult 4 years ago and
-          enjoy making progress videos of my skatingl Calisthenics helps improve
-          my strength, balance, and flexibility to improve my skating
-          performance.
-        </p>
-      </div>
+    <section class="About-me">
+      <h1>About Me</h1>
+      <p>
+        I enjoy designing things I’m passionate about, like figure skating or
+        making learning design accessible to those entering the field. I’ll code
+        if I need to, but I prefer to focus on the design side of things.
+        Learning to code, however, has made me a better designer. I learned how
+        to use Astro during the process of coding this portfolio and I love it
+        because the component structure is so similar to Figma.
+      </p>
+      <p>
+        Aside from design, you'll find me at the ice rink, training
+        calisthenics, making TikTok videos, or knitting something for my Shih
+        Tzu, Princess. I started figure skating as an adult 4 years ago and
+        enjoy making progress videos of my skating. Calisthenics helps improve
+        my strength, balance, and flexibility to improve my skating performance.
+      </p>
+
       <h1>Tools I Use</h1>
       <div class="columns">
         <div id="left"><TechList items={techStack.leftColumn} /></div>
         <div id="right"><TechList items={techStack.rightColumn} /></div>
       </div>
-    </div>
+    </section>
   </body>
 </Layout>
 
@@ -149,12 +147,12 @@ const techStack = {
   .columns {
     display: flex;
     flex-direction: row;
-    justify-content: space between;
+    justify-content: space-between;
     width: 100%;
     gap: 8rem;
     padding-left: 100px;
     padding-right: 100px;
-    margin-bottom: 100:px;
+    margin-bottom: 100px;
     max-width: 1200px;
   }
 
@@ -162,8 +160,9 @@ const techStack = {
   .right {
     flex: 1;
     width: 100%;
-    max-width: 700px; /* optional */
+    max-width: 700px;
   }
+
   .About-me {
     padding: 16px;
     width: 100%;
@@ -172,13 +171,15 @@ const techStack = {
     align-items: center;
     justify-content: center;
   }
+
   .About-me p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
     text-align: left;
-    max-width: 1200px; /* optional */
+    max-width: 1200px;
   }
+
   @media (max-width: 768px) {
     .columns {
       flex-direction: column;
@@ -186,35 +187,35 @@ const techStack = {
       padding: 0;
       gap: 0;
     }
-    .About-me p{
-      font-size: 14px;
-      line-height: 1.6;
-      max-width: 320px; 
-      padding: 0px;/* optional */
-      margin-top: 0px;
-    }
+
     .About-me {
-      padding: 16px;
+      padding: 1rem;
       width: 100%;
-      display: flex;
+      box-sizing: border-box;
       flex-direction: column;
-      max-width: 320px;
       align-items: center;
       justify-content: center;
     }
 
+    .About-me p {
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 0px;
+      margin-top: 0px;
+    }
+
     .toolContent {
-      height: auto; /* allow natural height */
+      height: auto;
       padding: 0;
       width: 100%;
       display: flex;
       flex-direction: column;
     }
-    .toolcontent p{
+
+    .toolcontent p {
       font-size: 14px;
       line-height: 1.5;
-
-      max-width: 350px; /* optional */
+      max-width: 350px;
     }
 
     #left,
@@ -223,13 +224,13 @@ const techStack = {
       padding-left: 0;
       padding-right: 0;
       width: 100%;
-      max-width: 400px; /* optional */
+      max-width: 400px;
     }
 
     h1 {
       font-size: 26px;
       text-align: left;
-      padding: 0%;
+      padding: 0;
       margin-bottom: 16px;
       margin-top: 0px;
     }
