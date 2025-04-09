@@ -137,7 +137,8 @@ button {
   max-width: 50%;
   padding: 8px 32px 8px 32px;
 }
-.body-column button {
+.body-column button,
+.row button {
   display: block;
   margin-left: 0px !important; /* Centers below button */
   align-items: start;
