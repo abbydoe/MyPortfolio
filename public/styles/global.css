@@ -537,4 +537,7 @@ a img {
   .text-column {
     padding-top: 0px;
   }
+  .square-image {
+    width: 650px;
+  }
 }
