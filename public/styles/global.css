@@ -520,7 +520,7 @@ a img {
   h2 {
     max-width: 600px;
   }
-  .column-container-double img,
+  .column-container-double,
   p {
     max-width: 600px;
   }
