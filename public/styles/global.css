@@ -95,7 +95,7 @@ header nav a {
 
 h1 {
   font-size: 72px;
-  margin: 0;
+  margin-bottom: 2.5rem;
   padding-left: 40px;
   padding-bottom: 0px;
   font-family: "Abril Fatface", serif;
@@ -281,7 +281,6 @@ ul {
 ul li {
   font-family: "verdana", sans-serif;
   font-weight: 400;
-  color: rgb(199, 199, 199);
   font-size: 18px;
 }
 .active {
@@ -302,7 +301,6 @@ ul li {
 }
 .text-column h1 {
   font-size: 36px;
-  margin-bottom: 2.5rem;
   padding: 0px;
 }
 
@@ -393,7 +391,6 @@ ul li {
   margin: 1rem;
 }
 .H1 {
-  margin-bottom: 0% !important;
   margin-top: 32px !important;
 }
 
