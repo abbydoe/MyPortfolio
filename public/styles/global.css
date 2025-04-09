@@ -520,10 +520,6 @@ a img {
   h2 {
     max-width: 600px;
   }
-  .column-container-double,
-  p {
-    max-width: 600px;
-  }
   .text-row-center h1,
   .column-container-double h1 {
     margin-bottom: 2.5rem;
