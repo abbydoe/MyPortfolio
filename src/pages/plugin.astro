@@ -50,8 +50,8 @@ import { Image } from "astro:assets";
       <Image
         src={HeroImg}
         alt="Landing screen for font theme plugin. Search for a theme."
-        width={HeroImg.width}
-        height={HeroImg.height}
+        height="561"
+        width="700"
         class="image"
       />
     </div>
@@ -86,8 +86,8 @@ import { Image } from "astro:assets";
       <Image
         src={BadPlugins}
         alt="font pair, better font picker, accidentally great font pairings"
-        width={BadPlugins.width}
-        height={BadPlugins.height}
+        height="561"
+        width="700"
         class="image"
       />
     </div>
@@ -124,8 +124,8 @@ import { Image } from "astro:assets";
       <Image
         src={HeroImg}
         alt="Landing screen for font theme plugin. Search for a theme."
-        width={HeroImg.width}
-        height={HeroImg.height}
+        height="561"
+        width="700"
         class="image"
       />
     </div>
@@ -172,8 +172,8 @@ import { Image } from "astro:assets";
       <Image
         src={ThreeFonts}
         alt="font pair, better font picker, accidentally great font pairings"
-        width={ThreeFonts.width}
-        height={ThreeFonts.height}
+        height="561"
+        width="700"
         class="image"
       />
     </div>
@@ -205,12 +205,12 @@ import { Image } from "astro:assets";
       </div>
     </div>
 
-    <div slot="image">
+    <div class="reverseImage" slot="image">
       <Image
         src={PopLayout}
         alt="popular layout for font weight information"
-        width={PopLayout.width}
-        height={PopLayout.height}
+        height="561"
+        width="700"
         class="image"
       />
     </div>
@@ -231,19 +231,23 @@ import { Image } from "astro:assets";
           src={themeCards}
           alt="popular layout for font weight information"
           class="square-image"
+          height="561"
+          width="700"
         />
       </div>
     </div>
     <div class="body-column-double">
       <p>
         When they click on a card, it displays the information in the same
-        pattern as they’ve already seen in the results tab.
+        pattern as they have already seen in the results tab.
       </p>
       <div class="square-image-container">
         <Image
           src={commonLayout}
           alt="popular layout for font weight information"
           class="square-image"
+          height="561"
+          width="700"
         />
       </div>
     </div>
@@ -327,6 +331,9 @@ import { Image } from "astro:assets";
   .auto-play-video-plug {
     width: 100%;
     height: auto;
+  }
+  .reverseImage {
+    width: 100%;
   }
 </style>
 
