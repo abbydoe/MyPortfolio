@@ -9,6 +9,8 @@ import Ice5 from "../assets/Ice-5.svg";
 import Ice6 from "../assets/Ice-6.svg";
 import { Image } from "astro:assets";
 import Header from "../components/Header.astro";
+import Timer from "../assets/material-time.svg";
+import Group from "../assets/material-group.svg";
 ---
 
 <Layout>
@@ -21,7 +23,7 @@ import Header from "../components/Header.astro";
       </h1>
       <div class="nested-container1">
         <div class="icon-column-s">
-          <img src="assets/people.svg" alt="peopleicon" />
+          <Image src={Timer} alt="diagnol arrow" />
         </div>
         <div class="body-column-s">
           <p>The design was done in 3 weeks including the style guide</p>
@@ -29,7 +31,7 @@ import Header from "../components/Header.astro";
       </div>
       <div class="nested-container2">
         <div class="icon-column-s">
-          <img src="assets/Timer.svg" alt="timericon" />
+          <Image src={Group} alt="diagnol arrow" />
         </div>
         <div class="body-column">
           <p>Me, the UI Designer</p>

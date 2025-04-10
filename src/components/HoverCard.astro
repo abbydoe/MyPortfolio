@@ -43,6 +43,10 @@ const isExternal = link.startsWith("http");
   </a>
 
   <style>
+    .view-button:hover {
+      background-color: skyblue !important;
+      color: white;
+    }
     .hover-card {
       overflow: hidden;
       transition: transform 0.3s ease;
@@ -52,7 +56,7 @@ const isExternal = link.startsWith("http");
     }
     a {
       text-decoration: none;
-      color: inherit;
+      color: #f8fafc;
     }
     h1 {
       margin-bottom: 1rem;
@@ -72,9 +76,10 @@ const isExternal = link.startsWith("http");
     .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(15, 23, 33, 0.9);
       padding: 1.2rem;
       opacity: 0;
+      pointer-events: none;
       transition: opacity 0.3s ease;
       display: flex;
       flex-direction: column;
@@ -95,6 +100,7 @@ const isExternal = link.startsWith("http");
     h1 {
       font-size: 36px;
       padding: 0px;
+      color: #f8fafc;
     }
 
     h2 {
@@ -102,26 +108,24 @@ const isExternal = link.startsWith("http");
       font-weight: normal;
       padding: 0px;
       margin: 0px;
+      color: #f8fafc;
     }
 
     .view-button {
       margin-top: 2rem;
       display: inline-block;
       padding: 0.5rem 1rem;
-      border: 2px solid white;
+      border: 2px solid #f8fafc;
       border-radius: 8px;
-      color: white;
+      color: #f8fafc;
       background: transparent;
       text-decoration: none;
       font-weight: 500;
-      transition: background 0.3s ease;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
       width: auto;
       max-width: fit-content;
-    }
-
-    .view-button:hover {
-      background: white;
-      color: black;
     }
   </style>
 </div>

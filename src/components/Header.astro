@@ -1,5 +1,7 @@
 ---
 const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing slash
+import { Image } from "astro:assets";
+import arrow from "../assets/material-diag.svg";
 ---
 
 <header class="site-header">
@@ -33,10 +35,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
       id="resumeLink"
     >
       Resume
-      <img
-        src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
-        alt=""
-      />
+      <Image src={arrow} alt="diagnol arrow" />
     </a>
     <a
       href="https://www.linkedin.com/in/harris-abigail/"
@@ -44,17 +43,12 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
       rel="noopener noreferrer"
     >
       LinkedIn
-      <img
-        src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
-        alt=""
-      />
+      <Image src={arrow} alt="diagnol arrow" />
     </a>
     <a href="https://github.com/abbydoe" target="_blank"
-      >GitHub <img
-        src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
-        alt=""
-      /></a
-    >
+      >GitHub
+      <Image src={arrow} alt="diagnol arrow" />
+    </a>
   </nav>
 
   <nav class="mobile-nav-overlay" id="mobileNav">
@@ -63,12 +57,10 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
       <li><a href="/about">About</a></li>
       <li><a href="/work">Work</a></li>
       <li>
-        <a href="https://github.com/abbydoe" target="_blank"
-          >GitHub <img
-            src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
-            alt=""
-          /></a
-        >
+        <a href="https://github.com/abbydoe" target="_blank">
+          GitHub
+          <Image src={arrow} alt="diagnol arrow" />
+        </a>
       </li>
       <li>
         <a
@@ -78,10 +70,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
           id="resumeLink"
         >
           Resume
-          <img
-            src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
-            alt=""
-          />
+          <Image src={arrow} alt="diagnol arrow" />
         </a>
       </li>
       <li>
@@ -91,10 +80,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
           rel="noopener noreferrer"
         >
           LinkedIn
-          <img
-            src="assets/north_east_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg"
-            alt=""
-          />
+          <Image src={arrow} alt="diagnol arrow" />
         </a>
       </li>
     </ul>
@@ -106,8 +92,8 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: black;
-    color: white;
+    background-color: #f8fafc;
+    color: #1e293b;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -127,7 +113,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
   }
 
   .nav-links a {
-    color: white;
+    color: #1e293b;
     text-decoration: none;
     font-size: 1rem;
     display: flex;
@@ -136,13 +122,8 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
     padding-right: 0px;
   }
   .nav-links a.active {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #1e293b;
     padding-right: 0px;
-  }
-
-  .nav-links a img {
-    width: 14px;
-    height: 14px;
   }
 
   /* Hamburger Menu (hidden on desktop) */
@@ -159,13 +140,13 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
   .hamburger span {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: #1e293b;
   }
 
   .mobile-nav-overlay {
     position: fixed;
     inset: 0;
-    background: black;
+    background: #f8fafc;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -185,7 +166,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
   }
 
   .mobile-nav-overlay a {
-    color: white;
+    color: #1e293b;
     font-size: 1.5rem;
     text-decoration: none;
   }
@@ -217,7 +198,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
       top: 100%;
       left: 0;
       right: 0;
-      background: black;
+      background: #f8fafc;
       flex-direction: column;
       align-items: center;
       gap: 1.25rem;
