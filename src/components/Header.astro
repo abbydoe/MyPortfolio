@@ -17,7 +17,15 @@ const currentPath = Astro.url.pathname.replace(/\/$/, ""); // removes trailing s
   <nav class="nav-links active">
     <a href="/" class={currentPath === "" ? "active" : ""}>Home</a>
     <a href="/about" class={currentPath === "/about" ? "active" : ""}>About</a>
-    <a href="/work" class={currentPath === "/work" ? "active" : ""}>Work</a>
+    <a
+      href="/work"
+      class={currentPath === "/work" ||
+      currentPath === "/plugin" ||
+      currentPath === "/salon" ||
+      currentPath === "/ice"
+        ? "active"
+        : ""}>Work</a
+    >
     <a
       href="/resume.pdf"
       target="_blank"
