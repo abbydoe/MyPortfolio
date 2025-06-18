@@ -7,8 +7,8 @@ import arrow from "../assets/material-down.svg";
   <div class="text">
     <div class="herotext">
       <h1 class="hero-h1">
-        Hi, I'm Abby, a mobile UX Designer forced to become a full-stack
-        devloper
+        Hi, I'm Abby, a mobile UX Designer slowly becoming a full-stack
+        developer
       </h1>
       <button id="caseButton" class="hero-button">Recent Work</button>
       <img src={arrow.src} alt="navigation arrow down" class="arrow" />
@@ -35,8 +35,11 @@ import arrow from "../assets/material-down.svg";
     padding-left: 8px;
   }
   .herotext {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   /* Mobile layout */
@@ -58,15 +61,24 @@ import arrow from "../assets/material-down.svg";
     .content img {
       z-index: 99999;
     }
+    .herotext {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     .text {
-      max-width: 90%;
+      max-width: 100%;
+      text-align: center;
     }
 
     h1 {
       font-size: 40px;
       padding-bottom: 0px;
       width: 100%;
+      justify-content: center;
     }
 
     .grouped {
@@ -83,8 +95,9 @@ import arrow from "../assets/material-down.svg";
       align-items: center; /* ✅ center everything horizontally */
     }
     .herotext {
-      margin-top: 10rem;
-      margin-bottom: 10rem;
+      dispaly: flex;
+      align-items: center;
+      justify-content: center;
     }
     .text button {
       margin: 120px 0 0 0;
