@@ -6,7 +6,19 @@ import CaseStudySlide from "../components/CaseStudySlide.astro";
 import { Image } from "astro:assets";
 import arrow from "../assets/material-down.svg";
 const caseStudies = [
-  {
+    {
+    title: "Skate Match",
+    subtitle: "Mobile App",
+    video: "/assets/skatedemo.mp4",
+    tags: [
+      { label: "UX Design", class: "first" },
+      { label: "Full-stack Development", class: "second" },
+    ],
+    description:
+      "A way for figure skaters to find ice dancing or pair skating partners.",
+    link: "/skate",
+  },
+{
     title: "Font Theme",
     subtitle: "Figma Plugin",
     video: "/assets/PluginDemo.mov",
@@ -145,7 +157,7 @@ const caseStudies = [
         .getElementById("resumeLink")
         ?.addEventListener("click", function (e) {
           e.preventDefault();
-          const resumeUrl = "/assets/resume.pdf";
+          const resumeUrl = "/assets/Abigail.Harris.Resume.pdf";
           window.open(resumeUrl, "_blank");
 
           const downloadLink = document.createElement("a");
