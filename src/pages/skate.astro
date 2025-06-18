@@ -1,0 +1,253 @@
+---
+import SplitSection from "../components/SplitSection.astro";
+import Layout from "../layouts/Layout.astro";
+import skate1 from "../assets/skate-1.png";
+import skate2 from "../assets/skate-2.png";
+import skate3 from "../assets/skate-3.png";
+import skate4 from "../assets/skate-4.png";
+import skate5 from "../assets/skate-5.png";
+import skate6 from "../assets/skate-6.png";
+import { Image } from "astro:assets";
+import Header from "../components/Header.astro";
+import Timer from "../assets/material-time.svg";
+import Group from "../assets/material-group.svg";
+---
+
+<Layout>
+  <Header />
+  <SplitSection fullHeight={false}>
+    <div slot="text">
+      <h1>
+        Skate Match is a mobile app that helps figure skaters find ice dancing
+        or pair skating partners.”
+      </h1>
+      <div class="nested-container1">
+        <div class="icon-column-s">
+          <Image src={Timer} alt="diagnol arrow" />
+        </div>
+        <div class="body-column-s">
+          <p>Ongoing, but so far 1 month</p>
+        </div>
+      </div>
+      <div class="nested-container2">
+        <div class="icon-column-s">
+          <Image src={Group} alt="diagnol arrow" />
+        </div>
+        <div class="body-column">
+          <p>I'm taking the role of UX Designer and Developer</p>
+        </div>
+      </div>
+    </div>
+
+    <div slot="image">
+      <Image
+        src={skate2}
+        alt="an image of a mobile screen filtering potential skating partners"
+        width={skate2.width}
+        height={skate2.height}
+        class="image"
+      />
+    </div>
+  </SplitSection>
+  <SplitSection fullHeight={false}>
+    <div slot="text">
+      <h1>What Prompted this project?</h1>
+      <div class="nested-container1">
+        <div class="body-column">
+          <h2>There's no efficient way to find a skating partner</h2>
+          <p>
+            Current methods include promoting yourself on social media which
+            only works if you have a large following, asking in Facebook groups,
+            or relying on your coach to know someone.
+          </p>
+        </div>
+      </div>
+      <div class="nested-container2">
+        <div class="body-column">
+          <h2>The idea</h2>
+          <p>
+            Create an app for the sole purpose of matching skating partners
+            where you don’t need a large following, or have to know someone
+            personally.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div slot="image">
+      <Image
+        src={skate1}
+        alt="an image of a skater's instagram post searching for a skating partner"
+        width={skate1.width}
+        height={skate1.height}
+        class="image"
+      />
+    </div>
+  </SplitSection>
+  <SplitSection fullHeight={false}>
+    <div slot="text">
+      <h1>Validating the app with the Skating community</h1>
+      <div class="nested-container1">
+        <div class="body-column">
+          <h2>I created a Figma prototype to guage interest</h2>
+          <p>
+            I used UX Pilot to create wireframes and prototyped the app with
+            videos in Figma. I posted it on my skating TikTok asking if my
+            followers would find it useful or want to use it. I also shared it
+            with my coach and the USFS organization. I received positive and
+            negative feedback and some suggestions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div slot="image">
+      <Image
+        src={skate4}
+        alt="two mobile screens from the early version of the app showing options to book from different activites other than ice skating"
+        width={skate4.width}
+        height={skate4.height}
+        class="image"
+      />
+    </div>
+  </SplitSection>
+  <SplitSection fullHeight={false}>
+    <div slot="text">
+      <h1>Responding to suggestions and negative Feedback</h1>
+      <div class="nested-container1">
+        <div class="body-column">
+          <h2>Negative Feedback</h2>
+          <p>
+            USFS told me they think the app would face problems gaining users
+            because our sport is so niche. I reminded them that they are the
+            official US organization for Figure skating who also has an
+            international skater following, so if they promote the app on their
+            social media then there will be no problem gaining users. They
+            shared it with their marketing team and asked me to update them when
+            I finish coding the app.
+          </p>
+        </div>
+      </div>
+      <div class="nested-container2">
+        <div class="body-column">
+          <h2>Suggestions</h2>
+          <p>
+            My TikTok followers suggested I make it a swipe/dating style app
+            because of the “Matching” aspect which aligned with my early
+            wireframes, but I decided against this because the quantity of
+            videos needed in each profile would not work with a swipe style app.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div slot="image">
+      <Image
+        src={skate5}
+        alt="an early version of the app showing a dating style swip app for figure skating profiles"
+        width={skate5.width}
+        height={skate5.height}
+        class="image"
+      />
+    </div>
+  </SplitSection>
+  <SplitSection fullHeight={false}>
+    <div slot="text">
+      <h1>I decided to build the app after receiving feedback</h1>
+      <div class="nested-container1">
+        <div class="body-column">
+          <h2>For effeciiencey, I built the frontend with Bolt.new</h2>
+          <p>
+            Bolt.new was able to generate wireframes matching the UI of the one
+            I created with UX Pilot, but it struggled with the backend, so I
+            transferred the project to VS code.
+          </p>
+        </div>
+      </div>
+      <div class="nested-container2">
+        <div class="body-column">
+          <h2>Backend and VS Code</h2>
+          <p>
+            VS code lets me have version control history and it doesn't change
+            things that I don't want it to change like Bolt.new does. This is
+            more efficient for the final steps of the projecgt.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div slot="image">
+      <Image
+        src={skate6}
+        alt="two mobile screens showing the waiver to sign and a QR code once completed"
+        width={skate6.width}
+        height={skate6.height}
+        class="image"
+      />
+    </div>
+  </SplitSection>
+  <SplitSection fullHeight={false}>
+    <div slot="text">
+      <h1>Current and Next Steps</h1>
+      <div class="nested-container1">
+        <div class="body-column">
+          <h2>Finish Coding, test, and promote</h2>
+          <p>
+            Once I finish the backend, I'll deploy the app and test it with my
+            TikTok followers as part of an unmoderated usability test. Then I'll
+            iterate and share the finished app iwth USFS to promote it on their
+            social media.
+          </p>
+          <button
+            onclick="window.open('https://www.figma.com/proto/airnBsCh4u3jvqGJay24kV/Ice-Time?page-id=0%3A1&node-id=1-4&p=f&viewport=718%2C91%2C0.1&t=SaQPNZrGNxVt0RSH-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A4&show-proto-sidebar=1', '_blank', 'noopener,noreferrer')"
+          >
+            Try the Prototype
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div slot="image">
+      <iframe
+        style="border: 1px solid rgba(0, 0, 0, 0.1);"
+        width="800"
+        height="450"
+        src="https://embed.figma.com/proto/airnBsCh4u3jvqGJay24kV/Ice-Time?page-id=0%3A1&node-id=1-4&p=f&viewport=718%2C91%2C0.1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A4&show-proto-sidebar=1&embed-host=share"
+        allowfullscreen></iframe>
+    </div>
+  </SplitSection>
+</Layout>
+<style>
+  .standaloneimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .image {
+    height: 600px;
+    width: auto;
+  }
+  .icon-column-s img {
+    width: 44px;
+    height: 44px;
+  }
+  iframe {
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .image {
+      width: 100%;
+      height: auto;
+    }
+
+    iframe {
+      display: none;
+    }
+    Header {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+</style>

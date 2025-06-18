@@ -1,40 +1,16 @@
 ---
-import { Image } from "astro:assets";
 import Headshot from "../assets/Headshot.png";
 import arrow from "../assets/material-down.svg";
 ---
 
-<div class="swiper-slide hero-slide">
-  <section class="hero">
-    <div class="content">
-      <Image
-        src={Headshot}
-        alt="Headshot"
-        width={Headshot.width}
-        height={Headshot.height}
-        format="webp"
-        class="hero-image"
-      />
-      <div class="text">
-        <h1>Abby Harris</h1>
-        <div class="grouped">
-          <h2 class="first">Product Designer</h2>
-          <h2 class="second">Front-end Developer</h2>
-          <!-- <h2 class="third">Content Creator</h2> -->
-        </div>
-        <p class="h-description">
-          Designers and developers don't always see eye to eye, so I put myself
-          in a developer's shoes and learned to code. Now when I design, I think
-          how it will be built. This helps me create designs that solve real
-          problems, are visually engaging, and are realistic to implement. I
-          excel in cross-functional communication because I understand the value
-          each role brings.
-        </p>
-        <button id="caseButton">Recent Work</button>
-        <img src={arrow.src} alt="navigation arrow down" class="arrow" />
-      </div>
-    </div>
-  </section>
+<div class="text">
+  <div class="herotext">
+    <h1 class="hero-h1">
+      Hi, I'm Abby, a mobile UX Designer forced to become a full-stack devloper
+    </h1>
+    <button id="caseButton" class="hero-button">Recent Work</button>
+    <img src={arrow.src} alt="navigation arrow down" class="arrow" />
+  </div>
 </div>
 
 <script>
@@ -48,38 +24,16 @@ import arrow from "../assets/material-down.svg";
 </script>
 
 <style>
-  .h-description {
-    display: block;
-  }
-
-  .first {
-    display: flex;
-
-    padding-bottom: 0px;
-    margin-top: 0px !important;
-    margin-bottom: 8px !important;
-  }
-
-  .second {
-    display: flex;
-
-    padding-bottom: 0px;
-    margin-top: 0px !important;
-    margin-bottom: 8px !important;
-  }
-
-  .third {
-    display: flex;
-    margin-top: 0px !important;
-    margin-bottom: 0px;
-  }
-
   .arrow {
     display: none;
   }
   .grouped {
     border-left: 1px solid #1e293b;
     padding-left: 8px;
+  }
+  .herotext {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
   }
 
   /* Mobile layout */
@@ -98,22 +52,8 @@ import arrow from "../assets/material-down.svg";
       justify-content: flex-start !important;
     }
 
-    .h-description {
-      padding-right: 8px;
-      margin-top: 8px;
-      padding-left: 8px;
-    }
-
     .content img {
       z-index: 99999;
-    }
-
-    .hero-image {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 0rem;
     }
 
     .text {
@@ -133,14 +73,16 @@ import arrow from "../assets/material-down.svg";
       padding-left: 8px;
       width: 90%;
     }
-
     .text {
       width: 90%;
       display: flex;
       flex-direction: column;
       align-items: center; /* ✅ center everything horizontally */
     }
-
+    .herotext {
+      margin-top: 10rem;
+      margin-bottom: 10rem;
+    }
     .text button {
       margin: 120px 0 0 0;
       border: none;
