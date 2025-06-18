@@ -113,6 +113,24 @@ const caseStudies = [
               if (pagination) pagination.style.display = "block";
               if (mobileArrow) mobileArrow.style.display = "flex"; // or "block"
             }
+            // 1. Pause all videos and reset their time
+document.querySelectorAll('.auto-play-video').forEach(vid => {
+    vid.pause();
+    vid.currentTime = 0; // Reset video to the beginning
+});
+
+// 2. Find the video in the currently active slide and play it
+const activeSlide = this.slides[this.activeIndex]; // 'this' refers to the Swiper instance
+if (activeSlide) {
+    const activeVideo = activeSlide.querySelector('.auto-play-video');
+    if (activeVideo) {
+        activeVideo.play().catch(error => {
+            // Handle potential autoplay errors (e.g., if video is not muted)
+            console.warn("Autoplay prevented for video:", error);
+            // You might want to display a play button here for the user
+        });
+    }
+}
           },
         },
         mousewheel: true,
@@ -136,7 +154,7 @@ const caseStudies = [
         swiper.slideTo(1);
       });
 
-      const video = document.querySelector(".auto-play-video");
+      /* const video = document.querySelector(".auto-play-video");
       if (video) {
         const observer = new IntersectionObserver(
           (entries) => {
@@ -147,7 +165,7 @@ const caseStudies = [
           { threshold: 0.5 },
         );
         observer.observe(video);
-      }
+      } */
 
       function scrollToSection() {
         swiper.slideTo(1);
