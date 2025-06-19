@@ -21,9 +21,13 @@ const {
 <style>
   .static-card {
     overflow: hidden;
+    transition: transform 0.3s ease;
     display: flex;
+    flex: 0 0 32%;
     flex-direction: column;
     max-width: 100%;
+    aspect-ratio: 3/3;
+    scroll-snap-align: start;
   }
 
   .image-wrapper {

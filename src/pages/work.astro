@@ -110,14 +110,14 @@ const contentCreation = [
       {designProjects.map((project) => <HoverCard {...project} />)}
     </div>
 
-    <h1>Photography</h1>
-    <div class="card-grid">
-      {photography.map((photo) => <HoverCard {...photo} />)}
-    </div>
-
     <h1>Logo and Picture Modification</h1>
     <div class="card-grid">
       {logoMods.map((img) => <StaticCard image={img} />)}
+    </div>
+
+    <h1>Photography</h1>
+    <div class="card-grid">
+      {photography.map((photo) => <HoverCard {...photo} />)}
     </div>
 
     <!-- <h1>Content Creation</h1>
@@ -128,37 +128,52 @@ const contentCreation = [
 </Layout>
 
 <style>
-  .work {
-    margin: 40px;
-    padding-bottom: 16px;
-    margin-top: 16px;
-  }
+  @media (min-width: 769px) {
+    .work {
+      margin: 40px;
+      padding-bottom: 16px;
+      margin-top: 16px;
+    }
 
-  .work h1 {
-    font-size: 36px;
-    padding: 0;
-    margin: 12px 0 12px 0;
-  }
+    .work h1 {
+      font-size: 36px;
+      padding: 0;
+      margin: 12px 0 12px 0;
+    }
 
-  .card-grid {
+    /* .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-bottom: 3rem;
-  }
+  } */
+    .card-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+      scroll-snap-type: x mandatory;
+    }
 
-  .logo-mod-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Exactly 2 per row */
-    gap: 2rem;
-    margin-bottom: 3rem;
-    padding: 0 2rem;
-    max-width: 100%;
-  }
+    .card-grid::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
 
-  h2 {
-    margin-top: 3rem;
-    font-size: 1.8rem;
+    .logo-mod-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Exactly 2 per row */
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding: 0 1 rem;
+      max-width: 100%;
+    }
+
+    h2 {
+      margin-top: 3rem;
+      font-size: 1.8rem;
+    }
   }
 
   @media (max-width: 768px) {
